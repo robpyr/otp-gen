@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+apply from: "./gradle/dependencies.gradle"
+group 'org.robpyr'
+
+version '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation libraries.groovy_all
+
+    testImplementation libraries.spock
+}
+
+test {
+    useJUnitPlatform()
+}
